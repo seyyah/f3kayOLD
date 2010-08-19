@@ -8,8 +8,12 @@ function render() { echo F3::serve('layout.htm'); }
 F3::config(".f3.ini");
 
 F3::route("GET /captcha",    ':captcha');
-F3::route("GET /",           ':home');
 F3::route("GET /min",	     ':minified',3600);
+
+F3::route("GET /",           ':home');
+
+F3::route("GET /create",  ':createkul');
+F3::route("POST /create", ':savekul');
 
 F3::run();
 
