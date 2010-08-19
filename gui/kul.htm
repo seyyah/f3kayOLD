@@ -1,0 +1,20 @@
+<h3>{@pagetitle}</h3>
+
+<form name="kul" method="post" action="{@PARAMS.0}" >
+<F3:check if="{@message}">
+	<F3:true><p class="fail">{@message}</p></F3:true>
+</F3:check>
+<dl>
+	<label for="tc">TC Kimlik No</label></dt>
+	<dd><input type="text" name="tc" id="tc" value="{@REQUEST.tc}" size="11"/>
+	<!--p><img src="/captcha" alt="Captcha" title="Captcha security image"/></p>
+	<dt><label for="captcha">Onay Kodu</label><dt>
+	<dd><input type="text" name="captcha" id="captcha"/></dd-->
+	<input type="submit" name="fsubmit" onsubmit="return TCKontrolEt()" value="=> TC Kontrol Et"/></dd>
+
+	<dt><label for="ad">Ad</label></dt>
+	<dd><input type="text" name="ad" id="ad" value="{@REQUEST.ad}" size="60" disabled style="visibility: hidden;"/></dd>
+
+	<dd><input type="submit" name="submit"/></dd>
+</dl>
+</form>
