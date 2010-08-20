@@ -1,20 +1,38 @@
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/sehir.js"></script>
+<script type="text/javascript" src="js/tc.js"></script>
+<script type="text/javascript" src="js/form.js"></script>
+<script type="text/javascript">
+document.onkeypress = stopRKey; 
+</script>
 <h3>{@pagetitle}</h3>
+<form name="form" id="form" action="islem.php" method="post" onsubmit="return gonder();" >
+<fieldset>
+<legend>Kişisel Bilgiler</legend><br/>
+<table border="0">
+<tr>
+<td>
+	<label for="tc">TC</label>
+	<input type="text" id="tc" name="tc" size="11" />
+	<a id="a_tc" href="#"	onclick="ControlTCNo()">TC Kontrol Et</a>
+</td><td id="asama2_td" style="visibility: hidden;">
+	Bilgilerin size ait olmadığını düşünüyorsanız <a href="#" onclick="window.location.reload()">tekrar TC gir</a> linkine tıklayın.
+</td>
+</table>
 
-<form name="kul" method="post" action="{@PARAMS.0}" >
-<F3:check if="{@message}">
-	<F3:true><p class="fail">{@message}</p></F3:true>
-</F3:check>
-<dl>
-	<label for="tc">TC Kimlik No</label></dt>
-	<dd><input type="text" name="tc" id="tc" value="{@REQUEST.tc}" size="11"/>
-	<!--p><img src="/captcha" alt="Captcha" title="Captcha security image"/></p>
-	<dt><label for="captcha">Onay Kodu</label><dt>
-	<dd><input type="text" name="captcha" id="captcha"/></dd-->
-	<input type="submit" name="fsubmit" onsubmit="return TCKontrolEt()" value="=> TC Kontrol Et"/></dd>
+<div id="asama2_div" style="visibility: hidden;">
+<label for="adsoyad">Ad Soyad :</label>
+<input type="text" id="adsoyad" name="adsoyad" size="35" disabled=true /><br /><br/>
 
-	<dt><label for="ad">Ad</label></dt>
-	<dd><input type="text" name="ad" id="ad" value="{@REQUEST.ad}" size="60" disabled style="visibility: hidden;"/></dd>
-
-	<dd><input type="submit" name="submit"/></dd>
-</dl>
+<label for="ilslc">İl :</label>
+<select size="1" id="il" onchange="ilceBas(this.options[this.options.selectedIndex].value)" name="il">
+</select><br/>
+<label for="ilceslc">İlçe :</label>
+<select size="1" id="ilceslc" name="ilceslc">
+<input type="hidden" name="gtc" id="gtc" value="">
+</select><br/>
+<input type="submit" name="kayit" size="12" value="Kayıt Ol" />
+</div>
+<br/>			
+</fieldset>
 </form>

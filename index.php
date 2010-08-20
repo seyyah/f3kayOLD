@@ -15,6 +15,13 @@ F3::route("GET /",           ':home');
 F3::route("GET /create",  ':createkul');
 F3::route("POST /create", ':savekul');
 
+F3::route("GET /test", "test");
+function test() {
+	echo F3::serve("example.htm");
+}
+F3::route("GET /ajax/adresAjax/@parameter", ":adresAjax");
+F3::route("GET /ajax/tc/@tc", ":tc");
+
 F3::run();
 
 ?>
